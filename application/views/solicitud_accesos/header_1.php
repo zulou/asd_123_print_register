@@ -53,17 +53,7 @@
 <script type='text/javascript' src='../../resources/js/jqBootstrapValidation.js'></script>
 <script type='text/javascript' src='../../resources/js/contact_m.js'></script>-->
         <script type='text/javascript' src='../../resources/js/freelancer.js'></script>
-        <style>
-            @page {
-                size: A4;
-                margin: 0;
-            }
-            @media print {
-                html, body {
-                    width: 210mm;
-                    height: 297mm;
-                }
-            </style>
+        
 
 
 
@@ -84,7 +74,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+                        <a class="navbar-brand" href="#page-top">Crac los andes</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -114,13 +104,13 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-
-                            <img class="img-responsive" src="../../resources/img/profile.png" alt="">
                             <div class="intro-text">
-                                <span class="name">Start Bootstrap</span>
+                                <span class="name">Formulario  de Solicitud de cliente</span>
                                 <hr class="star-light">
-                                <span class="skills">Web Developer - Graphic Artist - User Experience Designer</span>
+                                
                             </div>
+                            <img class="img-responsive" src="../../resources/img/profile.png" alt="">
+                            
                         </div>
                     </div>
                 </div>
