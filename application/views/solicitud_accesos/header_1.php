@@ -105,7 +105,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="intro-text">
-                                <span class="name">Formulario  de Solicitud de cliente</span>
+                                <span class="name">Formulario  de Solicitud de accesos</span>
                                 <hr class="star-light">
                                 
                             </div>
