@@ -171,6 +171,12 @@ class Main extends CI_Controller {
         $this->load->view('solicitud_accesos/footer');       
         
     }
+    public function login(){
+        
+        $this->load->view('login/header');
+        $this->load->view('login/about');
+        $this->load->view('login/footer');       
+    }
            
 
 }
