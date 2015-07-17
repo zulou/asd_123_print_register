@@ -48,7 +48,9 @@ class Login extends CI_Controller {
             $data = $this->session->userdata('nombre');
             redirect('main/vista_test');
         } else {
-            echo "logout";
+            echo json_encode(array(
+             'success'=>TRUE   
+            ));
         }
     }
     

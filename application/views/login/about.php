@@ -66,8 +66,8 @@
                 success: function (res) {
 
                     if (res.success === true) {
-                        alert("se registro con exito")
-                        //window.location.href = ('http://localhost/creacion_usuarios/index.php/main/solicitud_accesos');
+                        
+                        window.location.href = ('http://localhost/accesos/index.php/main/vista_test');
 
                     }
                 }
