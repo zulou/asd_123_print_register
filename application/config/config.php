@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://192.168.1.161/accesos/index.php/main/solicitud_accesos';
+$config['base_url']	= '';
 
 /*
 |--------------------------------------------------------------------------

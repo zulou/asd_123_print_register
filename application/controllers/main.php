@@ -4,6 +4,9 @@ class Main extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+        if (!$this->session->userdata('log')) {
+            redirect('login');
+        }
         $this->load->model('main_model');
     }
 
@@ -145,8 +148,8 @@ class Main extends CI_Controller {
     }
 
     public function vista_test() {
-        
-        
+
+
         $resultado_permisos = $this->main_model->main_permisos()->result_array();
         $resultado_cargos = $this->main_model->main_cargos()->result_array();
         $resultado_oficina = $this->main_model->get_datos_oficina()->result_array();
@@ -158,29 +161,28 @@ class Main extends CI_Controller {
             'datos_area' => $resultado_area
         );
 
-        
+
         $this->load->view('solicitud_accesos/header_1');
         $this->load->view('solicitud_accesos/sifcnet_view', $datos_permiso);
         $this->load->view('solicitud_accesos/about');
         $this->load->view('solicitud_accesos/footer_1');
     }
-    
-    public function impresion(){
+
+    public function impresion() {
         $this->load->view('solicitud_accesos/header');
         $this->load->view('solicitud_accesos/solicitud_impresion');
-        $this->load->view('solicitud_accesos/footer');       
-        
+        $this->load->view('solicitud_accesos/footer');
     }
-    public function login(){
-        
+
+    public function login() {
+
         $this->load->view('login/header');
         $this->load->view('login/about');
-        $this->load->view('login/footer');       
+        $this->load->view('login/footer');
     }
-    public function test_login(){
+
+    public function test_login() {
         //$this->
-        
     }
-           
 
 }
