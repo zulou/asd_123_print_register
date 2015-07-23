@@ -1,3 +1,5 @@
+<section class="success" id="about">
+    <div class="container">
 <div class="class_container">
     <div class="span12">
         <div class="widget">
@@ -25,12 +27,12 @@
                                         <label class="control-label">Cargo:</label>
                                         <div class="controls">
 
-                                            <select class="span12" name="cargo" id="select_cargo">
+                                            <select class="span12 colorTexto" name="cargo" id="select_cargo">
 
 
                                                 <?php
                                                 foreach ($datos_cargo as $row) {
-                                                    $option = "<option  value='";
+                                                    $option = "<option class='colorTexto' value='";
                                                     $option.=$row['pk_cargo'];
                                                     $option.="'";
                                                     $option.=">";
@@ -98,6 +100,8 @@
 
     </div>
 </div>
+    </div>
+    </section>  
 
 
 

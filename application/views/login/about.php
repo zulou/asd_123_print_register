@@ -56,20 +56,28 @@
     $(function () {
         $('#btn-login').click(function (e) {
             e.preventDefault();
-            console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            
             var login_datos = $('#form-login-datos').serializeArray();
+            
             $.ajax({
+                
                 url: ('http://localhost/accesos/index.php/login/check_login'),
                 data: {datos: login_datos},
                 dataType: 'Json',
                 type: 'POST',
                 success: function (res) {
+                    
+                    console.log(res);
 
                     if (res.success === true) {
-                        
+                        console.log("successs exito");
                         window.location.href = ('http://localhost/accesos/index.php/main/vista_test');
 
                     }
+                    else{
+                        console.log("success fail");
+                        window.location.href = ('http://localhost/accesos/index.php/login/login');
+                    } 
                 }
 
             });

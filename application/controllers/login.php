@@ -29,27 +29,31 @@ class Login extends CI_Controller {
         $consulta = $this->login_model->check_login($usuario, $password)->result_array();
         if ($consulta) {
 
-            var_dump($consulta);
+            //var_dump($consulta);
             $usuario_data = array(
                 'id' => $consulta[0]['id'],
                 'nombre' => $consulta[0]['usuario'],
                 'log' => TRUE
             );
             $this->session->set_userdata($usuario_data);
-            redirect('login/logi');
+            //redirect('login/logi');
+            $this->logi();
         } else {
             $this->index();
         }
     }
 
     public function logi() {
-        var_dump($this->session->userdata('nombre'));
+        //var_dump($this->session->userdata('nombre'));
         if ($this->session->userdata('log')) {
             $data = $this->session->userdata('nombre');
-            redirect('main/vista_test');
-        } else {
             echo json_encode(array(
              'success'=>TRUE   
+            ));
+            //redirect('main/vista_test');
+        } else {
+            echo json_encode(array(
+             'success'=>false   
             ));
         }
     }
@@ -60,7 +64,9 @@ class Login extends CI_Controller {
             'log'=>FALSE
         );
         $this->session->set_userdata($usuario_data);
-        redirect('login');
+         //$this->load->helper('http://www.google.com.pe'); 
+          redirect('/login/login/', 'refresh');
+        //redirect('login');
     }
 
 }

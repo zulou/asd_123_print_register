@@ -5,7 +5,7 @@ class Main extends CI_Controller {
     public function __construct() {
         parent::__construct();
         if (!$this->session->userdata('log')) {
-            redirect('login');
+            redirect('/login/login/', 'refresh');
         }
         $this->load->model('main_model');
     }
@@ -130,7 +130,9 @@ class Main extends CI_Controller {
 
         $pk_personal = $this->main_model->get_pk_personal($dni_personal)->result_array();
 
-
+        var_dump($desde);
+        var_dump($hasta);
+        
 
         $resultado = $this->main_model->registro_permiso_solicitado($pk_personal[0]['pk_personal'], $cargo_persona, $area_persona, $oficina, $desde, $hasta, $nombre_jefe);
         $id_result = $this->main_model->getLastInserted();
@@ -162,10 +164,13 @@ class Main extends CI_Controller {
         );
 
 
-        $this->load->view('solicitud_accesos/header_1');
+        //$this->load->view('solicitud_accesos/header_1');
+        $this->load->view('solicitud_accesos/header');        
         $this->load->view('solicitud_accesos/sifcnet_view', $datos_permiso);
-        $this->load->view('solicitud_accesos/about');
-        $this->load->view('solicitud_accesos/footer_1');
+        //$this->load->view('solicitud_accesos/about');
+        //$this->load->view('solicitud_accesos/footer_1');
+        //$this->load->view('login/about');
+        $this->load->view('solicitud_accesos/footer');
     }
 
     public function impresion() {
