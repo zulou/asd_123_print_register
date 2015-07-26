@@ -189,5 +189,9 @@ class Main extends CI_Controller {
     public function test_login() {
         //$this->
     }
+    public function sesiones(){
+        $var=$this->session->userdata('nombre');
+        var_dump($var);
+    }
 
 }
