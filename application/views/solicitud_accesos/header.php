@@ -93,7 +93,7 @@
                             <a href="http://app.cajalosandes.pe">AppAndesSuite</a>
                         </li>
                         <li class="page-scroll">
-                            <a href="http://app.cajalosandes.pe">Usuario</a>
+                            <a href="http://app.cajalosandes.pe"><?php echo $usuario ?></a>
                         </li>
                         <li class="page-scroll">
                             <a href="http://localhost/accesos/index.php/login/logout/">Salir</a>

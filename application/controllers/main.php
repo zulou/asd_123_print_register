@@ -64,8 +64,14 @@ class Main extends CI_Controller {
             'datos_cargo' => $resultado_cargos,
             'datos_permiso' => $array_push
         );
+                $usuario=$this->session->userdata('nombre');
 
-        $this->load->view('solicitud_accesos/header');
+        
+            $datos_usuario=array(
+            'usuario'=>$usuario
+        );
+
+        $this->load->view('solicitud_accesos/header',$datos_usuario);
         $this->load->view('solicitud_accesos/create_profile_view', $datos);
         $this->load->view('solicitud_accesos/footer');
     }
@@ -156,16 +162,22 @@ class Main extends CI_Controller {
         $resultado_cargos = $this->main_model->main_cargos()->result_array();
         $resultado_oficina = $this->main_model->get_datos_oficina()->result_array();
         $resultado_area = $this->main_model->get_datos_area()->result_array();
+        $usuario=$this->session->userdata('nombre');
         $datos_permiso = array(
             'datos_indice' => $resultado_permisos,
             'datos_cargo' => $resultado_cargos,
             'datos_oficina' => $resultado_oficina,
-            'datos_area' => $resultado_area
+            'datos_area' => $resultado_area,
+            
+        );
+        
+        $datos_usuario=array(
+            'usuario'=>$usuario
         );
 
 
         //$this->load->view('solicitud_accesos/header_1');
-        $this->load->view('solicitud_accesos/header');        
+        $this->load->view('solicitud_accesos/header',$datos_usuario);        
         $this->load->view('solicitud_accesos/sifcnet_view', $datos_permiso);
         //$this->load->view('solicitud_accesos/about');
         //$this->load->view('solicitud_accesos/footer_1');
